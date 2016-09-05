@@ -32,7 +32,7 @@ public class LoopRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer:test-loop?period=3000")
+        from("timer:test-loop?period=30000")
                 .process(this.setListProcessor)
                 .loopDoWhile(this.predicate)
                 .process(this.printProcessor);

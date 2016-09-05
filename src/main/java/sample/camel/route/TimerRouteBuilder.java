@@ -2,13 +2,14 @@ package sample.camel.route;
 
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 /**
  * Created by yamashiro-r on 2016/09/05.
  */
-//@Component
+@Component
 public class TimerRouteBuilder extends RouteBuilder {
 
     private Processor processor = exchange -> {
