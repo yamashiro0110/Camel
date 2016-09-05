@@ -2,3 +2,8 @@
 
 *****
 
+## Usage
+
+```sh
+gradle bootRun
+```
