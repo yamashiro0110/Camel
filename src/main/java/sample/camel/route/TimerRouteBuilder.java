@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 /**
- * Created by yamashiro-r on 2016/09/05.
+ * 3秒毎に現在時刻を出力する
  */
 @Component
 public class TimerRouteBuilder extends RouteBuilder {
 
-    private Processor processor = exchange -> {
+    private Processor printNowProcessor = exchange -> {
         final String now = LocalDateTime.now().toString();
         exchange.getIn().setBody(String.format("now: %s", now));
     };
@@ -20,7 +20,8 @@ public class TimerRouteBuilder extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("timer:test-timer?period=3000")
-                .process(this.processor)
-                .to("log:test-timer");
+                .process(this.printNowProcessor)
+                .to("log:test-timer")
+                .end();
     }
 }
