@@ -2,6 +2,13 @@
 
 *****
 
+## Required
+
+- Java8
+- Gradle
+
+*****
+
 ## Usage
 
 ```sh
