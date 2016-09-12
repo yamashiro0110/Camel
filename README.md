@@ -11,6 +11,4 @@
 
 ## Usage
 
-```sh
-gradle bootRun
-```
+`XxxRouteBuidler`がエントリポイントになっており`main(String[] args)`を実行して起動
